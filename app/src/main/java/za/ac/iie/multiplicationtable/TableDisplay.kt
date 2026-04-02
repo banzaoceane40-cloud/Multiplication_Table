@@ -18,11 +18,12 @@ class TableDisplay : AppCompatActivity() {
         val tableString: String? = bundle?.getString("tableNumber")
 
         //convert the table number to an integer
-        val tableNumber = tableString?.toInt()
+        val tableNumber = tableString!!.toInt()
+        val timesDisplay: String = "$tableNumber x table\n\n"
+        //display the heading so we can see the value in action
+        val multiplicationTable = findViewById<TextView>(R.id.numTextInput)
+        multiplicationTable.text = "$tableNumber x table\n\n"
 
-        //
-        val multiplicationTable = findViewById<TextView>(R.id.titleText)
-        multiplicationTable.text = "$tableNumber x table"
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
