@@ -26,15 +26,15 @@ class TableDisplay : AppCompatActivity() {
         val multiplicationTable = findViewById<TextView>(R.id.tableDisplayText)
         multiplicationTable.text = "$tableNumber x table\n\n"
 
-        while (count <= 10){
+        while (count <= 20){
             //example: user enters 5 and count is
             val answer = tableNumber * count
             timesDisplay += "$tableNumber x $count = ${answer}\n"
-            //increasing the count
-            if (count == 6) {
+
             count++
-            continue}
         }
+
+        multiplicationTable.text = timesDisplay
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
